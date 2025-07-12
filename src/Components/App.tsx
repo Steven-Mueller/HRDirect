@@ -1,4 +1,4 @@
-import "../Styling/App.css";
+import "../Styles/App.css";
 import Login from "./Login";
 
 function App() {
