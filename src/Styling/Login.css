@@ -1,0 +1,11 @@
+input {
+    outline: none;
+}
+
+input:hover {
+    cursor: default;
+}
+
+button:hover {
+    cursor: pointer;
+}
