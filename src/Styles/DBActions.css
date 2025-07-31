@@ -1,0 +1,24 @@
+th {
+  border: 2px;
+  padding: 0.5rem;
+  border-color: white;
+  border-style: solid;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-weight: bolder;
+}
+
+td {
+  border: 1px;
+  padding: 0.5rem;
+  border-color: white;
+  border-style: solid;
+}
+
+.id {
+  border: 2px;
+  padding: 0.5rem;
+  border-color: white;
+  border-style: solid;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-weight: bolder;
+}

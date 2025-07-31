@@ -1,9 +1,9 @@
 import "../Styles/App.css";
 import Login from "./Login";
 
-function App() {
+export default function App() {
   return (
-    <div className="main-gradient text-white w-full h-screen flex flex-col items-center justify-center gap-32">
+    <div className="">
       <div className="text-center">
         <h1>Welcome to HRDirect</h1>
         <p>Your human resources management solution.</p>
@@ -12,5 +12,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
