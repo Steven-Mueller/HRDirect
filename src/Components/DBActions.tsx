@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
 import "../Styles/DBActions.css";
 
+interface Employee {
+  id: number;
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+  email: string;
+  department: string;
+  hiringDate: string;
+}
+
 export default function DBActions() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Employee[]>([]);
 
   async function fetchData() {
     try {
       const response = await fetch("http://localhost:8080/employees/list");
       const data = await response.json();
-      console.log("API Data: ", data);
       setData(data);
     } catch (error) {
       console.error("Failed to receive data: ", error);
@@ -20,12 +29,15 @@ export default function DBActions() {
   }, []);
 
   if (data.length === 0) {
-    return <div>Daten laden ...</div>;
+    return <div>Daten werden geladen ...</div>;
   }
 
   return (
-    <div>
-      <table className="text-center">
+    <div className="flex flex-col gap-20">
+      <h1 className="text-center font-extrabold text-3xl underline">
+        Employee list
+      </h1>
+      <table className="text-center shadow-2xl">
         <thead>
           <tr>
             <th>ID</th>
@@ -38,21 +50,17 @@ export default function DBActions() {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, i) => {
-            return (
-              <tr key={"item " + i}>
-                <td className="id" key={"id " + i}>
-                  {item.id}
-                </td>
-                <td key={"firstName " + i}>{item.firstName}</td>
-                <td key={"lastName " + i}>{item.lastName}</td>
-                <td key={"dob " + i}>{item.dateOfBirth}</td>
-                <td key={"email " + i}>{item.email}</td>
-                <td key={"department " + i}>{item.department}</td>
-                <td key={"hiringDate " + i}>{item.hiringDate}</td>
-              </tr>
-            );
-          })}
+          {data.map((item) => (
+            <tr key={item.id}>
+              <td className="id">{item.id}</td>
+              <td>{item.firstName}</td>
+              <td>{item.lastName}</td>
+              <td>{item.dateOfBirth}</td>
+              <td>{item.email}</td>
+              <td>{item.department}</td>
+              <td>{item.hiringDate}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
