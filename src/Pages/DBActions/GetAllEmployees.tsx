@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../Styles/DBActions.css";
+import "../../Styles/DBActions.css";
 
 interface Employee {
   id: number;
@@ -11,12 +11,13 @@ interface Employee {
   hiringDate: string;
 }
 
-export default function DBActions() {
+export default function GetAllEmployees() {
   const [data, setData] = useState<Employee[]>([]);
+  const apiURL = import.meta.env.VITE_API_URL;
 
   async function fetchData() {
     try {
-      const response = await fetch("http://localhost:8080/employees/list");
+      const response = await fetch(apiURL);
       const data = await response.json();
       setData(data);
     } catch (error) {
@@ -25,11 +26,24 @@ export default function DBActions() {
   }
 
   useEffect(() => {
+    if (!document.title.includes("Employees")) {
+      document.title = "HRDirect - Employees";
+    }
+
     fetchData();
   }, []);
 
   if (data.length === 0) {
-    return <div>Daten werden geladen ...</div>;
+    return (
+      <div>
+        Daten werden geladen{" "}
+        <span className="dots">
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </span>
+      </div>
+    );
   }
 
   return (
