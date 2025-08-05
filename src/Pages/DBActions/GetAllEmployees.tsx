@@ -13,7 +13,7 @@ interface Employee {
 
 export default function GetAllEmployees() {
   const [data, setData] = useState<Employee[]>([]);
-  const apiURL = import.meta.env.VITE_API_URL;
+  const apiURL = import.meta.env.VITE_API_GETALLEMPLOYEES;
 
   async function fetchData() {
     try {
@@ -36,7 +36,7 @@ export default function GetAllEmployees() {
   if (data.length === 0) {
     return (
       <div>
-        Daten werden geladen{" "}
+        Loading data{" "}
         <span className="dots">
           <span>.</span>
           <span>.</span>

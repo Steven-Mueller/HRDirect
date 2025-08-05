@@ -6,7 +6,7 @@ import "../Styles/Layout.css";
 export default function Layout() {
   return (
     <>
-      <header>
+      <header className="text-center bg-black/40 rounded-4xl">
         <Navbar />
       </header>
       <main className="flex flex-col items-center justify-center bg-black/40 rounded-4xl">
