@@ -26,10 +26,6 @@ export default function GetAllEmployees() {
   }
 
   useEffect(() => {
-    if (!document.title.includes("Employees")) {
-      document.title = "HRDirect - Employees";
-    }
-
     fetchData();
   }, []);
 

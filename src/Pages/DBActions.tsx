@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GetAllEmployees from "./DBActions/GetAllEmployees";
 
 export default function DBActions() {
@@ -7,6 +7,12 @@ export default function DBActions() {
   function handleGetAllEmployees() {
     getAllEmployees ? setGetAllEmployees(false) : setGetAllEmployees(true);
   }
+
+  useEffect(() => {
+    if (!document.title.includes("DBActions")) {
+      document.title = "HRDirect - DBActions";
+    }
+  }, []);
 
   return (
     <>
