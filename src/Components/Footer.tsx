@@ -1,7 +1,9 @@
 export default function Footer() {
+  const currYear = new Date().getFullYear();
+
   return (
     <>
-      <h1>footer</h1>
+      <h1>&copy; Steven Müller - {currYear}</h1>
     </>
   );
 }
