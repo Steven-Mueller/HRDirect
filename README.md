@@ -2,7 +2,7 @@
 <p align="center" style="font-size: 16;"> Your human resource management solution </p>
 </h1>
 
-<p align="center" style="font-size: 24px; background-color: gray; border-"> What is used ? </p>
+<p align="center" style="font-size: 24px; background-color: gray;"> What is used ? </p>
 <ul style="list-style-type: none;">
   <li><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="24" height="24" alt="React" /> React for Frontend</li>
   <li>‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾</li>
