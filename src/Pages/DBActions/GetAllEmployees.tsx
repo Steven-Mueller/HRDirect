@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../Styles/DBActions.css";
 
-interface Employee {
+type Employee = {
   id: number;
   firstName: string;
   lastName: string;
@@ -9,7 +9,7 @@ interface Employee {
   email: string;
   department: string;
   hiringDate: string;
-}
+};
 
 export default function GetAllEmployees() {
   const [data, setData] = useState<Employee[]>([]);

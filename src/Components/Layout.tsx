@@ -6,7 +6,11 @@ import "../Styles/Layout.css";
 export default function Layout() {
   const location = useLocation();
 
-  if (location.pathname === "/" || location.pathname === "/pnf") {
+  if (
+    location.pathname === "/" ||
+    location.pathname === "/pnf" ||
+    location.pathname === "/login"
+  ) {
     return (
       <>
         <main className="flex items-center justify-center">

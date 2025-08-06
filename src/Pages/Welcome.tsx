@@ -2,7 +2,9 @@ import { useEffect } from "react";
 
 export default function Welcome() {
   useEffect(() => {
-    document.title += " Welcome";
+    if (!document.title.includes("Welcome")) {
+      document.title = "HRDirect - Welcome";
+    }
   }, []);
 
   return (
