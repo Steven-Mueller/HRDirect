@@ -5,3 +5,11 @@
     #ffc02d 0px 0px 10px, #ffc02d 0px 0px 15px;
   color: #ffffff;
 }
+
+.app {
+  background-color: #ffc02d;
+  max-width: fit-content;
+  border: 1rem solid red;
+  border-radius: 1rem;
+  padding: 1rem;
+}

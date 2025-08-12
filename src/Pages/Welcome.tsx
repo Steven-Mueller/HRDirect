@@ -23,7 +23,10 @@ export default function Welcome() {
       document.title = "HRDirect - Welcome";
     }
 
-    if (!localStorage.getItem("quotes")) {
+    if (
+      !localStorage.getItem("quotes") ||
+      Number(localStorage.getItem("quote_index")) >= 50
+    ) {
       fetchData();
     } else {
       setIndex(Number(localStorage.getItem("quote_index")));
@@ -43,12 +46,15 @@ export default function Welcome() {
   }, [index]);
 
   return (
-    <div className="flex flex-col gap-10 text-center">
-      <h1 className="font-extrabold text-4xl text-shadow-lg text-shadow-black/50">
-        Welcome to HRDirect
-      </h1>
+    <div className="flex flex-col gap-10 items-center">
+      <div className="app text-center">
+        <h1 className="font-extrabold text-4xl text-shadow-lg text-shadow-black/50">
+          Welcome to HRDirect
+        </h1>
+        <h2>Your human resource management system</h2>
+      </div>
       <div className="flex flex-row w-full h-1/5 gap-10">
-        <p className="font-extrabold text-shadow-lg text-shadow-black/50">
+        <p className="font-extrabold text-shadow-lg text-shadow-black/50 underline">
           Quote of the day:
         </p>
         <blockquote className="quote text-right">
