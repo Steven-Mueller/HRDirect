@@ -7,9 +7,9 @@
 }
 
 .app {
-  background-color: #ffc02d;
-  max-width: fit-content;
-  border: 1rem solid red;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid transparent;
   border-radius: 1rem;
   padding: 1rem;
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../Styles/Welcome.css";
+import Login from "./Login";
 
 export default function Welcome() {
   const apiUrl = import.meta.env.VITE_API_QUOTES;
@@ -47,11 +48,13 @@ export default function Welcome() {
 
   return (
     <div className="flex flex-col gap-10 items-center">
-      <div className="app text-center">
-        <h1 className="font-extrabold text-4xl text-shadow-lg text-shadow-black/50">
-          Welcome to HRDirect
-        </h1>
-        <h2>Your human resource management system</h2>
+      <div className="anim-border">
+        <div className="app text-center">
+          <h1 className="font-extrabold text-4xl text-shadow-lg text-shadow-black/50">
+            Welcome to HRDirect
+          </h1>
+          <h2>Your human resource management system</h2>
+        </div>
       </div>
       <div className="flex flex-row w-full h-1/5 gap-10">
         <p className="font-extrabold text-shadow-lg text-shadow-black/50 underline">
@@ -73,6 +76,7 @@ export default function Welcome() {
           </i>
         </blockquote>
       </div>
+      <Login />
     </div>
   );
 }
